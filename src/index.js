@@ -3,11 +3,20 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { Provider } from 'react-redux';
+import store from './db/store'
+import { Container } from '@material-ui/core';
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+
+    <Provider store={store}>
+      <Container fixed>
+       <App />
+      </Container>
+    </Provider>,
+ 
+
   document.getElementById('root')
 );
 
